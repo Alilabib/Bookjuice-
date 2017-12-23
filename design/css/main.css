@@ -1,0 +1,31 @@
+body {
+    padding-top: 70px;
+}
+
+.auth_board {
+    height: 280px;
+    padding-top: 50px;
+}
+
+.error {
+    color: #f00;
+}
+
+
+/*profile page*/
+
+.profile_data .img-circle {
+    width: 250px;
+}
+
+.profile_data .name {
+    margin-left: 77px;
+}
+
+.profile_data .profile_details {
+    margin-top: 35px;
+    margin-left: 20px;
+}
+
+
+/*profile page*/

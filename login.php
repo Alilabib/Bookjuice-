@@ -1,7 +1,8 @@
 <?php 
     include 'init.php';
     include $tpl.'header.php';
-    
+
+session_start();    
    
 ?>
 
@@ -86,7 +87,7 @@
             if($user){
                 $data = $user->fetch_array();
                 $id = $data['id'];
-
+                $_SESSION['userid'] = $id; 
                 echo"<script>window.location='profile.php?id='+$id;</script>";
             }else{
                 echo"<script>invalid_input();</script>";

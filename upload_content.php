@@ -5,10 +5,10 @@
     $username = $_POST['username'];
 
     //Create uploads folder constant
-define("CONTENT_DIR","includes\helpers\contents\$username\\");
-if($_SERVER["REQUEST_METHOD"]=="POST"){
+define("CONTENT_DIR","includes\helpers\contents\\".$username."\\");
 
-  if(isset($_POST['content'])){
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+  if(isset($_POST['username'])){
     if(!empty($_FILES["content"])) {
         $myfile = $_FILES["content"];
         if($myfile['error'] !== UPLOAD_ERR_OK) {
@@ -33,7 +33,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
          exit;
      }   
 
-     echo "asdasfasdfas";
+     
      header("Location:".$_SERVER['HTTP_REFERER']);
 
     }

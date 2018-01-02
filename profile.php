@@ -22,19 +22,19 @@
     <div class="profile_details row">
 
     <form class="" action="upload_content.php" method="POST" enctype="multipart/form-data">
-        <div class="form-group">
-            <input type ="hidden" name="username" vlaue="<?php echo $data['name']; ?>">
+        <input type="hidden" name="username" value="<?php echo $data['name']; ?>"/>
+        <div class="form-group">    
             <label for="fileinput">File Input</label>
             <input type="file" name="content" id="fileinput">
             <p class="help-block">You just Can upload files here </p>
         </div>
-        <button type="submit" class="btn btn-primary">Upload Files <i class="fa fa-upload"></i></button>
+        <input type="submit" class="btn btn-primary" value="Upload Files"> 
     </form>
     <table class="table table-hover">
         <tr>
-            <th> Id     </th>
+            <th> Id      </th>
             <th> Title   </th>
-            <th> Path </th>
+            <th class=""> Actions </th>
         </tr>
         <?php 
          $path = getcwd();
@@ -46,9 +46,12 @@
                     if($entry !== '.' && $entry !== '..') {
         ?>
         <tr>
-            <td> <?php echo $count; ?> </td>
-            <td><?php echo $entry?> </td>
-            <td> <?php echo $user_folder.$entry ?> </td>
+            <td> <?php echo $count++; ?> </td>
+            <td><a href="<?php echo"http://localhost/BOOKJUICE/includes/helpers/contents/".$data['name']."/".$entry; ?>"> <?php echo $entry; ?>  </a>  </td>
+            <td>
+                <a href="" class="btn btn-success">Share</a>
+                <a href="del_file.php?path=includes\helpers\contents\<?php echo $data['name']."\\".$entry; ?>" class="btn btn-danger">Delete</a>
+            </td>    
         </tr>
        <?php  
                     }
